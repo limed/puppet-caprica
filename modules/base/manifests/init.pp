@@ -1,6 +1,6 @@
 class base {
 
-    packages { [
+    package { [
         "vim",
         "htop",
         "lsof",
