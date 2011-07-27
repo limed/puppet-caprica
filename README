@@ -1,1 +1,20 @@
 Puppet configs for caprica.sudoers.org
+
+*** Notes ***
+
+* Installing puppet *
+aptitude install puppet puppetmaster vim-puppet
+
+* Gen cert and notify puppet which is the master server *
+puppetd --server caprica.sudoers.org --waitforcert 60
+
+* On master server list and sign cert *
+puppetca --list
+puppetca --sign caprica.sudoers.org
+
+* Poking puppetd *
+- Leave it as is and wait 30 minutes or
+    * puppetd -vt
+
+- To test
+    * puppetd --noop --test --debug

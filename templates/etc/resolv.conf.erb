@@ -1,0 +1,7 @@
+# File managed by puppet
+
+domain <%= domain %>
+<% dns_servers.each do |ns| %>nameserver <%= ns %>
+<% end %>
+
+options timeout:1
