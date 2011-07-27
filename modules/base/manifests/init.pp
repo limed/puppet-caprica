@@ -7,7 +7,7 @@ class base {
         "pwgen",
         "puppet",
         "strace",
-        "sysstate",
+        "sysstat",
         "lsb-release"
     ]:
         ensure => installed
