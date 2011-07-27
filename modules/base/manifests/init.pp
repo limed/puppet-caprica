@@ -15,7 +15,7 @@ class base {
 
     file { '/root/.vimrc':
         owner => root, group => root, mode => 644,
-        source => "puppet://${policy_host}/files/root/dot.vimrc"
+        source => "puppet:///files/root/dot.vimrc"
     }
 
 }
