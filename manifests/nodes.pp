@@ -2,3 +2,6 @@
 node basenode {
     include base
 }
+
+node 'caprica.sudoers.org' inherits basenode{
+}
