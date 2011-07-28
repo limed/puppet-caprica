@@ -1,0 +1,8 @@
+#!/bin/sh
+# Copyright (c) 2008 Oregon State University - Network Engineering
+# All rights reserved.
+#
+# Upload the current package list daily to /etc
+# File managed by puppet
+
+/usr/bin/dpkg --list > /etc/package.list
