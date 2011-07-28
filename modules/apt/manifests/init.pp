@@ -21,7 +21,7 @@ class apt {
         owner   => root,
         group   => root,
         mode    => 755,
-        source  => "puppet:///files/usr/local/sbin/check-updates"
+        source  => "puppet:///files/usr/local/bin/check-updates"
     }
 
     exec { 'apt-update':
