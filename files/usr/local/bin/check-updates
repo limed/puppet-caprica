@@ -1,0 +1,26 @@
+#!/bin/sh
+# Copyright (c) 2007 Oregon State University - Network Engineering
+# All rights reserved.
+#
+# File managed by puppet
+
+email=admins@sudoers.org
+
+if aptitude update > /dev/null
+then
+    echo "The following updates are available:" > /tmp/apt-get.$$
+    echo >> /tmp/apt-get.$$
+
+        if [ $(cat /etc/debian_version) != '4.0' ]; then
+        apt_opt="safe-upgrade"
+        else
+        apt_opt="uprade"
+        fi
+
+    if aptitude --assume-yes -s $apt_opt | egrep -B1 '^ ' >> /tmp/apt-get.$$
+    then
+        cat /tmp/apt-get.$$ | mailx -s "`hostname`: updated packages available" $email
+    fi
+    rm /tmp/apt-get.$$
+fi
+

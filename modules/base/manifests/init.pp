@@ -4,6 +4,7 @@ class base {
         "vim",
         "htop",
         "lsof",
+        "mailx",
         "pwgen",
         "puppet",
         "strace",

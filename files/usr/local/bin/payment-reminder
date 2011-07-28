@@ -1,0 +1,19 @@
+#!/bin/bash
+# Sends payment reminders for colo
+#
+# File managed by puppet
+
+MAILTO="hosting@sudoers.org"
+AMOUNT_OWED="16.50"
+HOSTNAME=`hostname`
+SUBJECT="[REMINDER] Payment owed for ${HOSTNAME}"
+
+if [ $1 == "-d" ]; then
+    MAILTO="limed@sudoers.org"
+fi
+
+echo "All,
+This is a reminder that payment for ${HOSTNAME} is ${AMOUNT_OWED}
+
+Thanks,
+The system" | mailx -a "From: admins@sudoers.org" -e -s "$SUBJECT" ${MAILTO}

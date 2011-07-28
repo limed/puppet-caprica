@@ -17,6 +17,13 @@ class apt {
         }
     }
 
+    file { '/usr/local/sbin/check-updates':
+        owner   => root,
+        group   => root,
+        mode    => 755,
+        source  => "puppet:///files/usr/local/sbin/check-updates"
+    }
+
     exec { 'apt-update':
         command     => "/usr/bin/apt-get -qq update",
         logoutput   => false,
