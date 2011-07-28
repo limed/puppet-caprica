@@ -7,7 +7,8 @@ class motd {
 
     file { '/etc/motd.static':
         ensure  => 'present',
-        group   => 'root', owner   => 'root',
+        group   => 'root',
+        owner   => 'root',
         source  => "puppet:///files/etc/motd.static"
     }
 

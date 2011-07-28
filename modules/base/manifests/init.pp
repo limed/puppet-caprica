@@ -18,4 +18,8 @@ class base {
         source => "puppet:///files/root/dot.vimrc"
     }
 
+    tidy { '/tmp':
+        age     => '1w',
+        recurse => true
+    }
 }
