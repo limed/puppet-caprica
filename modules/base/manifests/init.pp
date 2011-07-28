@@ -29,6 +29,13 @@ class base {
 
     }
 
+    file { '/usr/local/bin/payment-reminder':
+        owner   => root,
+        group   => root,
+        mode    => 755,
+        source  => "puppet:///files/usr/local/bin/payment-reminder"
+    }
+
     tidy { '/tmp':
         age     => '1w',
         recurse => true
