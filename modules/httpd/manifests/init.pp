@@ -12,6 +12,10 @@ class httpd {
         notify  => Service["$httpd_package"]
     }
 
+    package { 'cronolog':
+        ensure  => installed
+    }
+
     service { $httpd_package:
         ensure      => running,
         hasstatus   => true,
