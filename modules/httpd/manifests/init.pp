@@ -8,7 +8,7 @@ class httpd {
     }
 
     package { $httpd_package:
-        ensure  => installed
+        ensure  => installed,
         notify  => Service["$httpd_package"]
     }
 

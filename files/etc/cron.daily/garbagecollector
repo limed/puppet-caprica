@@ -1,0 +1,5 @@
+#!/bin/sh
+# File managed by puppet
+
+/usr/bin/find /var/log/apache2 -mtime +20 -type f -iname *.log* -exec /bin/rm -rf {} \;
+/usr/bin/find /var/log -mtime +20 -type f -iname *.log* -exec /bin/rm -rf {} \;
