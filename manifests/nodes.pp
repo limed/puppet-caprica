@@ -2,7 +2,7 @@
 node basenode {
     include base
 
-    if $operatingsystem == 'debian' {
+    if $operatingsystem == 'Debian' {
         include apt
     }
 
