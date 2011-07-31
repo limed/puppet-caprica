@@ -1,0 +1,17 @@
+# File managed by puppet
+
+APT {
+    Get {
+        Assume-Yes "true";
+        Fix-Missing "yes";
+        Show-Upgraded "yes";
+        Purge "true";
+        List-Cleanup "true";
+        ReInstall "false";
+    };
+}
+
+
+DPkg::Pre-Install-Pkgs {
+    "dpkg-preconfigure --apt --frontend=noninteractive";
+};
