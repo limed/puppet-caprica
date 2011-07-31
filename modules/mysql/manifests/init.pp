@@ -10,7 +10,6 @@ class mysql {
 
     service { 'mysqld':
         ensure      => running,
-        hasstart    => true,
         hasrestart  => true,
         hasstatus   => true,
         start       => "/etc/init.d/mysql start",
