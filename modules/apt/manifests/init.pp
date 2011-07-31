@@ -17,6 +17,14 @@ class apt {
         }
     }
 
+    file { '/etc/apt/apt.conf.d/10puppet' :
+        ensure  => present,
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/apt/apt.conf.d/10puppet"
+    }
+
     file { '/usr/local/sbin/check-updates':
         owner   => root,
         group   => root,
