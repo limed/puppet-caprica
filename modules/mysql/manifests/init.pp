@@ -8,7 +8,7 @@ class mysql {
         ensure  => installed
     }
 
-    service { 'mysqld':
+    service { 'mysql':
         ensure      => running,
         hasrestart  => true,
         hasstatus   => true,
