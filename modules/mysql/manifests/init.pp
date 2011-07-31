@@ -13,7 +13,6 @@ class mysql {
         hasstart    => true,
         hasrestart  => true,
         hasstatus   => true,
-        hasrestart  => true,
         start       => "/etc/init.d/mysql start",
         restart     => "/etc/init.d/mysql restart",
         require     => Package["mysql-server"]
