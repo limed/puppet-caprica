@@ -7,8 +7,10 @@ node basenode {
     }
 
     include motd
+    include ntp
 }
 
 node 'caprica.sudoers.org' inherits basenode{
     include httpd
+    include mysql
 }
