@@ -1,4 +1,4 @@
-class base::hack {
+class base::edit {
 
     define line($file, $line, $ensure = 'present') {
         case $ensure {
@@ -19,16 +19,16 @@ class base::hack {
                 #     onlyif => "/bin/grep -qFx '${line}' '${file}'"
                 # }
             }
-            #uncomment: {
-            #    exec { "/bin/sed -i -e'/${line}/s/#\+//' ‘${file}’” :
-            #       onlyif => "/bin/grep '${line}' '${file}' | /bin/grep '^#' | /usr/bin/wc -l"
-            #    }
-            #}
-            #comment: {
-            #    exec { "/bin/sed -i -e'/${line}/s/\(.\+\)$/#\1/' ‘${file}’" :
-            #        onlyif => "/usr/bin/test `/bin/grep '${line}' '${file}' | /bin/grep -v '^#' | /usr/bin/wc -l` -ne 0"
-            #    }
-            #}
+            uncomment: {
+                exec { "/bin/sed -i -e'/${line}/s/#\\+//' '${file}'" :
+                   onlyif => "/bin/grep '${line}' '${file}' | /bin/grep '^#' | /usr/bin/wc -l"
+                }
+            }
+            comment: {
+                exec { "/bin/sed -i -e'/${line}/s/\\(.\\+\\)$/#\\1/' '${file}'" :
+                    onlyif => "/usr/bin/test `/bin/grep '${line}' '${file}' | /bin/grep -v '^#' | /usr/bin/wc -l` -ne 0"
+                }
+            }
 
         }
     }
