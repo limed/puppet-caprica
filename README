@@ -14,7 +14,7 @@ puppetca --sign caprica.sudoers.org
 
 * Poking puppetd *
 - Leave it as is and wait 30 minutes or
-    * puppetd -vt
+    * puppetd --test --no-daemonize --one-time
 
 - To test
     * puppetd --noop --test --debug
