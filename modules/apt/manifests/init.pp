@@ -25,7 +25,7 @@ class apt {
         source  => "puppet:///files/etc/apt/apt.conf.d/10puppet"
     }
 
-    file { '/usr/local/sbin/check-updates':
+    file { '/usr/local/bin/check-updates':
         owner   => root,
         group   => root,
         mode    => 755,
