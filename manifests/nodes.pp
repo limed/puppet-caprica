@@ -7,14 +7,8 @@ node basenode {
         include apt
         base::edit::line { '.bashrc':
             file    => '/root/.bashrc',
-            line    => [
-                    "export LS_OPTIONS",
-                    "eval",
-                    "alias ls",
-                    "alias ll",
-                    "alias l"
-            ],
-            ensure      => uncomment
+            line    => 'export LS_OPTIONS',
+            ensure  => uncomment
         }
     }
     include ssh

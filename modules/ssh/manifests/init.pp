@@ -7,7 +7,7 @@ class ssh {
         ensure  => present
     }
 
-    service { 'sshd':
+    service { 'ssh':
         ensure      => running,
         hasrestart  => true,
         hasstatus    => true,
