@@ -1,6 +1,7 @@
 # Default node, modules that go to all nodes go here
 node basenode {
     include base
+    include base::edit # ugly ass hack
 
     if $operatingsystem == 'Debian' {
         include apt

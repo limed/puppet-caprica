@@ -10,7 +10,7 @@ class ssh {
     service { 'sshd':
         ensure      => running,
         hasrestart  => true,
-        hassttus    => true,
+        hasstatus    => true,
         require     => Package["ssh"]
     }
 }
