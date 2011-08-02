@@ -25,8 +25,3 @@ class httpd {
 
 }
 
-class httpd::vhost inherits httpd {
-}
-
-class httpd::mod inherits httpd {
-}

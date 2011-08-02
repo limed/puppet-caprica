@@ -1,5 +1,7 @@
 class base::edit {
 
+    include base
+
     define line($file, $line, $ensure = 'present') {
         case $ensure {
             default : { err ( "unknown ensure value ${ensure}" ) }
