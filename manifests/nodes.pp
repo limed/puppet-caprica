@@ -14,4 +14,8 @@ node default {
 node 'caprica.sudoers.org' inherits default{
     include httpd
     include mysql
+
+    package { 'python-twisted':
+        ensured => installed
+    }
 }
