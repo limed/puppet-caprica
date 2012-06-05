@@ -7,6 +7,7 @@ class base {
         "mailx",
         "pwgen",
         "puppet",
+        "php5-sqlite",
         "strace",
         "sysstat",
         "lsb-release"
