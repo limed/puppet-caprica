@@ -37,8 +37,8 @@ class base {
         source  => "puppet:///files/usr/local/bin/payment-reminder"
     }
 
-    tidy { '/tmp':
-        age     => '1w',
-        recurse => true
-    }
+    #tidy { '/tmp':
+    #    age     => '1w',
+    #    recurse => true
+    #}
 }
